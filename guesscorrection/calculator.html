@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div id="calcbox">
+        <form>
+            <label>Maximum possible multiple choice points:</label>
+            <input type="text" id="msg" class="update" placeholder="0"><br><br>
+            <label>Your total multiple choice points:</label>
+            <input type="text" id="tsg" class="update" placeholder="0"><br><br>
+            <label>Your total open question points:</label>
+            <input type="text" id="tso" class="update" placeholder="0"><br><br>
+            <input type="button" id="submit" value="Submit" ><br>
+            <hr>
+            <label>Your corrected MC score:</label>
+            <input type="text" id="mcresult" class="output" readonly><br>
+            <label>Final score:</label>
+            <input type="text" id="finalresult" class="output" readonly><br>
+        </form>
+    </div>
+
+</body>
+<script>
+
+    function calcscore() {
+        let msg = document.getElementById("msg").value
+        let tsg = document.getElementById("tsg").value
+        let gs = 0.25*msg
+        let tso = document.getElementById("tso").value
+        let mcoutput = (msg * ((tsg - gs) / (msg - gs)))
+        let finaloutput = parseFloat(mcoutput) + parseFloat(tso)
+        document.getElementById("mcresult").value = mcoutput
+        document.getElementById("finalresult").value = finaloutput
+    }
+
+    document.getElementById("submit").addEventListener("click", calcscore)
+</script>
+</html>

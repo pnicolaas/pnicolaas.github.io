@@ -27,3 +27,16 @@ body {
     font-weight: bold;
 }
   
+#notice {
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+ul {
+    margin-top: -20px;
+}
